@@ -1,0 +1,40 @@
+.einstein-avatar {
+  position: relative;
+}
+
+/* Mouth animation (when speaking) */
+.mouth {
+  position: absolute;
+  bottom: 42%; /* Adjust based on where the mouth is on your character */
+  left: 47.1%;
+  transform: translateX(-50%);
+  width: 3.5%; /* Default size */
+  height: 5px; /* Default height */
+  background-color: #8d484c; /* Placeholder color for mouth */
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+/* Animation for speaking: makes mouth open and close */
+.mouth.speaking {
+  animation: mouthSpeaking 0.5s infinite alternate; /* Makes mouth "speak" */
+}
+
+/* Keyframe for mouth speaking animation */
+@keyframes mouthSpeaking {
+  0% {
+    width: 3.5%;
+    height: 5px;
+    border-radius: 10px;
+  }
+  50% {
+    width: 4%; /* Mouth opens wider */
+    height: 8px;
+    border-radius: 15px; /* Wider mouth */
+  }
+  100% {
+    width: 3.5%;
+    height: 5px;
+    border-radius: 10px;
+  }
+}
